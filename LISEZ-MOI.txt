@@ -1,0 +1,95 @@
+PROGRAMME HYPERTROPHIE — version v16
+====================================
+
+Ce zip contient TOUS les fichiers du site, deja corriges.
+Il corrige le probleme "Chrome dit que l'app est deja installee".
+
+Ce qui a change par rapport a ce qui est en ligne :
+  - index.html          : les nouveautes (voir plus bas)
+  - sw.js               : muscu-v13 -> muscu-v16, manifeste en reseau-d'abord
+  - manifest.webmanifest: "id" -> /muscu-app?v=3
+  Reuploade les 8 fichiers, c'est plus simple et sans risque.
+
+Les nouveautes de cette version :
+  - unilateraux scindes en cote droit puis cote gauche, enchaines,
+    le repos ne part qu'apres les deux
+  - bouton "- 1 serie" en pendant du "+ 1 serie"
+  - escalier de difficulte au poids du corps : plus de montee des
+    repetitions a l'infini, on change de mouvement
+  - neuf icones de palier reellement differentes
+  - mise en pause de la serie pendant une absence
+  - mode voyage, programme sans aucun materiel
+  - seance full body extensible par un bouton +
+  - seances salle revues avec banc, halteres et barre
+  - 16 paliers de flamme au lieu de 9, l'icone change bien plus
+    souvent les premieres semaines (2, 4, 7, 10, 14, 21 jours)
+  - ecran de fete quand un palier est franchi
+  - annonce du record battu, avec l'ancien et le nouveau chiffre
+
+
+MARCHE A SUIVRE
+---------------
+
+1. Decompresse ce zip. Tu dois obtenir 8 fichiers EN VRAC
+   (index.html, sw.js, manifest.webmanifest, les 4 images, ce fichier).
+   Il ne doit PAS y avoir de dossier autour.
+
+2. Va sur https://github.com/du-bist-gut-genug/sportttttttt
+
+3. Bouton "Add file" en haut a droite -> "Upload files"
+
+4. Glisse les 8 fichiers dans la zone, d'un seul coup.
+   GitHub remplacera les anciens automatiquement.
+
+5. Descends en bas -> bouton vert "Commit changes"
+
+6. Attends 1 a 2 minutes, le temps que GitHub Pages republie.
+
+
+VERIFICATION AVANT DE TOUCHER AU TELEPHONE
+------------------------------------------
+
+Ouvre dans ton navigateur :
+  https://du-bist-gut-genug.github.io/sportttttttt/sw.js
+
+Tu dois y lire "muscu-v16" et le mot "reseauDabord".
+
+Tant que tu lis encore une version anterieure, ce n'est pas republie :
+attends un peu et recharge. Inutile d'essayer d'installer avant.
+
+
+SUR LE TELEPHONE, DANS CET ORDRE
+--------------------------------
+
+1. Appui long sur l'ancienne icone "Muscu" -> Desinstaller.
+   Important : l'identite de l'app a change, l'ancienne installation
+   devient une app fantome qui bloque la proposition.
+
+2. Ouvre Chrome sur https://du-bist-gut-genug.github.io/sportttttttt/
+   Charge la page DEUX fois :
+     - le 1er chargement recupere le nouveau service worker
+     - le 2e sert enfin le manifeste a jour
+
+3. Menu ... de Chrome -> "Installer l'application" doit apparaitre.
+
+
+SI CA RESISTE ENCORE
+--------------------
+
+Chrome -> Parametres -> Confidentialite et securite
+       -> Effacer les donnees de navigation
+       -> coche "Images et fichiers en cache" -> Effacer
+
+Puis recharge le site deux fois.
+
+
+A SAVOIR
+--------
+
+Ne rechange plus le champ "id" du manifeste sans raison.
+Chaque nouvelle valeur cree une nouvelle app aux yeux de Chrome,
+et l'ancienne icone reste orpheline sur le telephone.
+
+Tes donnees (seances, charges, historique, serie de jours) sont
+stockees dans le navigateur et ne sont PAS effacees par cette
+mise a jour. Elles survivent a la reinstallation de l'app.
